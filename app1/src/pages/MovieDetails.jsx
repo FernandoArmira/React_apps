@@ -3,6 +3,7 @@ import styles from './MovieDetails.module.css'
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { get } from '../utils/httpClient';
+import { Spinner } from '../components/Spinner';
 
 export function MovieDetails(){
 
@@ -10,16 +11,24 @@ export function MovieDetails(){
 
     console.log(movieId)
 
+    const [isloading,setIsloading] = useState(true);
+
     const [movie,setMovie] = useState(null)
 
+
     useEffect(()=>{
+        setIsloading(true);
+
         get("/movie/" + movieId).then(data =>{
             setMovie(data);
+            setIsloading(false);
         })
     },[movieId])
 
-    if (!movie){
-        return null
+    if(isloading){
+        return (
+            <Spinner/>
+        )
     }
 
     const imageUrl = "https://image.tmdb.org/t/p/w300" + movie.poster_path;
