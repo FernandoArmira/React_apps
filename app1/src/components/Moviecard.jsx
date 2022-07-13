@@ -1,9 +1,12 @@
 import styles from './Moviecard.module.css'
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {Link } from "react-router-dom";
+//import placeholder from '../placeholder.jpg'
+import { getMovieimage } from '../utils/getMovieimage';
 
 export function Moviecard({movie}){
     //console.log(styles)
-    const imageurl = "https://image.tmdb.org/t/p/w300" + movie.poster_path;
+    const imageurl = getMovieimage(movie.poster_path,300)
+    //const imageurl = movie.poster_path ? "https://image.tmdb.org/t/p/w300" + movie.poster_path : placeholder;
 
     return(
         <li className={styles.movieCard}>

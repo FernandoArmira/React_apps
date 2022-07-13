@@ -1,9 +1,10 @@
-import movie from './movie.json'
+//import movie from './movie.json'
 import styles from './MovieDetails.module.css'
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { get } from '../utils/httpClient';
 import { Spinner } from '../components/Spinner';
+import { getMovieimage } from '../utils/getMovieimage';
 
 export function MovieDetails(){
 
@@ -31,7 +32,8 @@ export function MovieDetails(){
         )
     }
 
-    const imageUrl = "https://image.tmdb.org/t/p/w300" + movie.poster_path;
+    const imageUrl = getMovieimage(movie.poster_path,300)
+    //const imageUrl = "https://image.tmdb.org/t/p/w300" + movie.poster_path;
 
     return(
         
