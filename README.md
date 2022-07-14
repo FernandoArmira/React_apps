@@ -1,2 +1,2 @@
-# React_apps
-Aplicaciones utilizando React
+# React_movieapp
+Aplicacio utilizando framework React
