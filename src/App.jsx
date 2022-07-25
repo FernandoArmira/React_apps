@@ -1,6 +1,6 @@
 import { Moviesgrid } from "./components/Moviesgrid"
 import styles from './App.module.css'
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from "react-router-dom";
 import { MovieDetails } from "./pages/MovieDetails";
 import { Landingpage } from "./pages/Landingpage";
 
@@ -22,6 +22,7 @@ export function App(){
             <Routes>
                 <Route exact path="/movies/:movieId" element={<MovieDetails/>}/>
                 <Route path="/" element={<Landingpage/>}/>
+                <Route path="*" element={<Navigate replace to ="/"/>}/>
   
             </Routes>
         </main>

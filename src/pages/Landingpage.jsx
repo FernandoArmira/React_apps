@@ -1,11 +1,12 @@
+import { useSearchParams } from 'react-router-dom';
 import { Moviesgrid } from '../components/Moviesgrid' 
 import { Search } from '../components/Search'
 import { useDebounce } from '../hooks/useDebounce';
-import { useQuery } from '../hooks/useQuery';
+//import { useQuery } from '../hooks/useQuery';
 
 export function Landingpage(){
 
-    const query = useQuery()
+    const [query] = useSearchParams()
 
     const search = query.get("search")
 

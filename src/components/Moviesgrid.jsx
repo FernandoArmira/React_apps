@@ -4,7 +4,7 @@ import { Moviecard } from './Moviecard';
 //import movies from './movies.json'
 import sytles from './Moviesgrid.module.css'
 import { Spinner } from './Spinner';
-import { useQuery } from '../hooks/useQuery';
+//import { useQuery } from '../hooks/useQuery';
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { Empty } from './Empty';
 
